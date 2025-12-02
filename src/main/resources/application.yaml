@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: screenmatch
+api:
+  key: "37b7b775"
