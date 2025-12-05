@@ -1,11 +1,18 @@
 package br.com.alura.screenmatch;
 
+import br.com.alura.screenmatch.model.EpirsodioDTO;
 import br.com.alura.screenmatch.model.SerieDto;
+import br.com.alura.screenmatch.model.TemporadaDTO;
+import br.com.alura.screenmatch.principal.Menu;
 import br.com.alura.screenmatch.service.ConsumoAPI;
 import br.com.alura.screenmatch.service.ConverteDados;
+import com.sun.tools.javac.Main;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @SpringBootApplication
 public class ScreenmatchApplication implements CommandLineRunner {
@@ -16,11 +23,6 @@ public class ScreenmatchApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		var consumoApi = new ConsumoAPI();
-		String json = consumoApi.obterDados("https://www.omdbapi.com/?t=bigbang&apikey=37b7b775");
-		System.out.println(json);
-		ConverteDados converteDados = new ConverteDados();
-		SerieDto dados = converteDados.obterDados(json, SerieDto.class);
-		System.out.println("Dados convertidos: " + dados);
+		Menu menu = new Menu();
 	}
 }
